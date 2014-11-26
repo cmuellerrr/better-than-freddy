@@ -9,6 +9,9 @@ $(function() {
         loadMsgs = ['Hmmm...', 'Let me check...', "Let's see...", 'Interesting choice...', 'Oh man...',
             'It might be...', "Tough one...", 'Ooo good one...', 'Well...', 'Maybe...'];
 
+    //clear the input
+    $('#movie').val('');
+
     //Get and store Freddy's rating
     $.ajax({
         url: "http://api.rottentomatoes.com/api/public/v1.0/movies/13997.json?apikey=zf4yhdsrtqyyhtcfdv7t9azm",

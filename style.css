@@ -30,10 +30,6 @@ a:hover {
     margin: 125px auto 0;
 }
 
-.marquee {
-    margin-bottom: 100px;
-}
-
 .marquee p, .marquee p input {
     text-align: center;
     font-size: 48px;
@@ -47,6 +43,9 @@ a:hover {
 .marquee input {
     width: 100%;
     border: 1px solid #c7c7c7;
+    -webkit-border-radius: 5px; 
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 
 .marquee em {
@@ -57,7 +56,7 @@ a:hover {
     width: 200px;
     height: 200px;
     position: relative;
-    margin: auto;
+    margin: 100px auto 0;
 
     -webkit-perspective: 800px;
     -moz-perspective: 800px;
@@ -72,6 +71,8 @@ a:hover {
 }
 
 .flipper, .flipper figure {
+    -webkit-border-radius: 20px; 
+    -moz-border-radius: 20px;
     border-radius: 20px;
 }
 
@@ -82,7 +83,7 @@ a:hover {
     height: 100%;
     margin: 0;
     padding: 20px;
-    border: 1px solid #d8d8d8;
+    border: 1px solid #c7c7c7;
     text-align: center;
 
     -webkit-transition: -webkit-transform .45s;
@@ -160,6 +161,19 @@ a:hover {
     visibility: hidden;
 }
 
+
+footer {
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    margin: 10px;
+    font-size: 10px;
+    color: grey;
+}
+
+footer p {
+    margin: 0;
+}
 
 /** Make placeholder text consistent **/
 
