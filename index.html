@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Better than Freddy</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="js/jquery.ui.autocomplete.extension.js"></script>
+    <script src="js/main.js"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Lobster+Two|Montserrat:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="content">
+        <div class="marquee">
+            <p><em>Is</em></p>
+            <p><input id="movie" placeholder="enter movie title"></p>
+            <p><em>better than</em></p>
+            <p><a href="http://www.rottentomatoes.com/m/freddy_got_fingered" target="_blank">Freddy Got Fingered?</a></p>
+        </div>
+        <div class="flip-wrapper">
+            <div id="flipper" class="flipper">
+                <figure id="baseCard"></figure>
+                <figure id="msgCard" class="message">
+                    <p id="msg">Hmmm...</p>
+                </figure>
+                <figure id="resultCard" class="result equal">
+                    <p>It's</p>
+                    <p id="adj">--</p>
+                    <p id="ratings"><a href="" target="_blank"><span id="uRating">--</span> avg<em> vs </em><span id="fRating"></span> avg</a></p>
+                </figure>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
