@@ -7,7 +7,7 @@ $(function() {
         resultFig = document.getElementById('resultCard'),
         resultRot = 180,
         loadMsgs = ['Hmmm...', 'Let me check...', "Let's see...", 'Interesting choice...', 'Oh man...',
-            'It might be...', "Tough one...", 'Ooo good one...', 'Well...', 'Maybe...'];
+            "Tough one...", 'Ooo good one...', 'Well...', 'Maybe...'];
 
     //clear the input
     $('#movie').val('');

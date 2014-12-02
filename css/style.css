@@ -56,7 +56,7 @@ a:hover {
     width: 200px;
     height: 200px;
     position: relative;
-    margin: 100px auto 0;
+    margin: 100px auto;
 
     -webkit-perspective: 800px;
     -moz-perspective: 800px;
@@ -163,16 +163,9 @@ a:hover {
 
 
 footer {
-    position:absolute;
-    bottom: 0;
-    left: 0;
-    margin: 10px;
+    text-align: center;
     font-size: 10px;
     color: grey;
-}
-
-footer p {
-    margin: 0;
 }
 
 /** Make placeholder text consistent **/
