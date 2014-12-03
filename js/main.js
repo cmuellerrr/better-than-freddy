@@ -16,8 +16,8 @@ $(function() {
     $.ajax({
         url: "http://api.rottentomatoes.com/api/public/v1.0/movies/13997.json?apikey=zf4yhdsrtqyyhtcfdv7t9azm",
         dataType: "jsonp",
-        success: function(data) {
-            freddyRating = (data.ratings.critics_score + data.ratings.audience_score) / 2;
+        success: function (data) {
+            freddyRating = getRating(data.ratings.critics_score, data.ratings.audience_score);
             $("#fRating").text(freddyRating + "%");
         }
     });
@@ -26,7 +26,7 @@ $(function() {
     $("#movie").autocomplete({
         html: true,
         minLength: 3,
-        source: function(request, response) {
+        source: function (request, response) {
             $.ajax({
                 url: "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=zf4yhdsrtqyyhtcfdv7t9azm",
                 dataType: "jsonp",
@@ -34,7 +34,7 @@ $(function() {
                     q: request.term,
                     page_limit: 8
                 },
-                success: function(data) {
+                success: function (data) {
                     var results = data.movies,
                     suggestions = [],
                     curMovie,
@@ -59,7 +59,7 @@ $(function() {
                         suggestions.push({
                             label: htmlPartial,
                             value: curMovie.title,
-                            rating: (curMovie.ratings.critics_score + curMovie.ratings.audience_score) / 2,
+                            rating: getRating(curMovie.ratings.critics_score, curMovie.ratings.audience_score),
                             url: curMovie.links.alternate
                         });
                     }
@@ -67,7 +67,7 @@ $(function() {
                 }
             });
         },
-        select: function(event, ui) {
+        select: function (event, ui) {
             var newAdj,
                 newClass;
 
@@ -100,21 +100,21 @@ $(function() {
 
             flipToResult();
         },
-        open: function() {
+        open: function () {
             $(this).removeClass("ui-corner-all").addClass("ui-corner-top");
         },
-        close: function() {
+        close: function () {
             $(this).removeClass("ui-corner-top").addClass("ui-corner-all");
         },
     });
     
     //flip back to the front if they start typing again
-    $("#movie").keydown(function(event) {
+    $("#movie").keydown(function (event) {
         flipToFront();
     });
 
     //flip the flipper to the result card
-    var flipToResult = function() {
+    var flipToResult = function () {
         //only if the front is showing
         if (baseRot % 360 === 0) {
             baseRot -= 180;
@@ -123,7 +123,7 @@ $(function() {
             setTransforms(baseFig, baseRot);
             setTransforms(msgFig, msgRot);
 
-            setTimeout(function() {
+            setTimeout(function () {
                 msgRot -= 180;
                 resultRot -= 180;
                 
@@ -134,7 +134,7 @@ $(function() {
     };
 
     //flip the flipper back to the front
-    var flipToFront = function() {
+    var flipToFront = function () {
         //only if the result is showing
         if (resultRot % 360 === 0) {
             baseRot += 180;
@@ -147,10 +147,24 @@ $(function() {
     };
 
     //utility for setting up the cross-browser transform rules
-    var setTransforms = function(ele, deg) {
+    var setTransforms = function (ele, deg) {
         ele.style.transform="rotateX(" + deg + "deg)";
         ele.style.webkitTransform="rotateX(" + deg + "deg)";
         ele.style.OTransform="rotateX(" + deg + "deg)";
         ele.style.MozTransform="rotateX(" + deg + "deg)";
+    };
+
+    //determine the total rating from avg critic and audience scores
+    var getRating = function (critic, audience) {
+        var divisor = 2;
+        if (critic < 0) {
+            divisor--;
+            critic = 0;
+        }
+        if (audience < 0) {
+            divisor--;
+            audience = 0;
+        }
+        return (critic + audience) / divisor;
     };
 });
