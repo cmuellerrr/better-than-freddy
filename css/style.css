@@ -42,10 +42,15 @@ a:hover {
 
 .marquee input {
     width: 100%;
-    border: 1px solid #c7c7c7;
+    border: none;
+    border-bottom: 1px dashed #c0c0c0;
     -webkit-border-radius: 5px; 
     -moz-border-radius: 5px;
     border-radius: 5px;
+}
+
+.marquee input:focus {
+    outline: 0;
 }
 
 .marquee em {
@@ -83,7 +88,7 @@ a:hover {
     height: 100%;
     margin: 0;
     padding: 20px;
-    border: 1px solid #c7c7c7;
+    border: 1px solid #c0c0c0;
     text-align: center;
 
     -webkit-transition: -webkit-transform .45s;
