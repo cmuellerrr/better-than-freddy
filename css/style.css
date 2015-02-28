@@ -1,4 +1,4 @@
-* { 
+* {
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
@@ -44,7 +44,7 @@ a:hover {
     width: 100%;
     border: none;
     border-bottom: 1px dashed #c0c0c0;
-    -webkit-border-radius: 5px; 
+    -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
@@ -61,7 +61,7 @@ a:hover {
     width: 200px;
     height: 200px;
     position: relative;
-    margin: 100px auto;
+    margin: 100px auto 0;
 
     -webkit-perspective: 800px;
     -moz-perspective: 800px;
@@ -76,7 +76,7 @@ a:hover {
 }
 
 .flipper, .flipper figure {
-    -webkit-border-radius: 20px; 
+    -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
 }
@@ -95,7 +95,7 @@ a:hover {
     -moz-transition: -moz-transform .45s;
     -o-transition: -o-transform .45s;
     transition: transform .45s;
-    
+
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     -o-transform-style: preserve-3d;
@@ -166,11 +166,16 @@ a:hover {
     visibility: hidden;
 }
 
-
 footer {
-    text-align: center;
-    font-size: 10px;
-    color: grey;
+  padding: 100px 0 50px;
+  font-size: 11px;
+  text-align: center;
+  color: #c0c0c0;
+}
+
+footer a {
+    text-decoration: underline;
+    color: inherit;
 }
 
 /** Make placeholder text consistent **/
@@ -180,15 +185,15 @@ footer {
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #d8d8d8;  
+   color: #d8d8d8;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #d8d8d8;  
+   color: #d8d8d8;
 }
 
-:-ms-input-placeholder {  
-   color: #d8d8d8;  
+:-ms-input-placeholder {
+   color: #d8d8d8;
 }
 
 /* autocomplete stuff */
@@ -197,9 +202,9 @@ footer {
     background: whitesmoke url("img/ajax-loader.gif") 99% no-repeat;
 }
 
-.ui-state-hover, .ui-widget-content 
-.ui-state-hover, .ui-widget-header .ui-state-hover, 
-.ui-state-focus, .ui-widget-content .ui-state-focus, 
+.ui-state-hover, .ui-widget-content
+.ui-state-hover, .ui-widget-header .ui-state-hover,
+.ui-state-focus, .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
     background: #F0F9FF;
     border: 1px solid #2B9EE8;

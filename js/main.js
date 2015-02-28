@@ -21,7 +21,7 @@ $(function() {
             $("#fRating").text(freddyRating + "%");
         }
     });
-    
+
     //Setup the autocomplete widget
     $("#movie").autocomplete({
         html: true,
@@ -107,9 +107,9 @@ $(function() {
             $(this).removeClass("ui-corner-top").addClass("ui-corner-all");
         },
     });
-    
+
     //flip back to the front if they start typing again
-    $("#movie").keydown(function (event) {
+    $("#movie").keyup(function (event) {
         flipToFront();
     });
 
@@ -126,7 +126,7 @@ $(function() {
             setTimeout(function () {
                 msgRot -= 180;
                 resultRot -= 180;
-                
+
                 setTransforms(msgFig, msgRot);
                 setTransforms(resultFig, resultRot);
             }, 700);
