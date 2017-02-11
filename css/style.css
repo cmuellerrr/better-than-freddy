@@ -30,6 +30,13 @@ a:hover {
     margin: 125px auto 0;
 }
 
+.note {
+  background: #fff0d7;
+  padding: 15px;
+  margin-bottom: 100px;
+  font-size: 16px;
+}
+
 .marquee p, .marquee p input {
     text-align: center;
     font-size: 48px;
