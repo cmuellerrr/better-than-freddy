@@ -206,7 +206,7 @@ footer a {
 /* autocomplete stuff */
 
 .ui-autocomplete-loading {
-    background: whitesmoke url("img/ajax-loader.gif") 99% no-repeat;
+    background: whitesmoke url("../img/ajax-loader.gif") 99% no-repeat;
 }
 
 .ui-state-hover, .ui-widget-content
